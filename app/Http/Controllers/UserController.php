@@ -88,13 +88,12 @@ class UserController extends Controller
      //   }
 
         if($password==$users->password){
-
            // return "success";
             return Response::json(array('status' => "success", 'name' => $users->name, 'id' => $users->id));
 
-        }else{
-            
-            return "fail";
+        }
+else{
+            return response()->json('Error 500',500);;
         }
     }
 
